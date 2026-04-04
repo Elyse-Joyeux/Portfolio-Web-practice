@@ -266,23 +266,21 @@ span{
     transition: 0.3s ease;
 }
 
-.services-container .services-box:hover{
-    border-color:var(--main-color);
-    transform: scale(1.02);
-}
-
 .services-box i{
     font-size: 5rem;
     color: var(--main-color);
+    transition: 0.3s ease;
 }
 
 .services-box h3{
     font-size: 2.6rem;
+    transition: 0.3s ease;
 }
 
 .services-box p{
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
+    transition: 0.3s ease;
 }
 
 .contact{
@@ -373,6 +371,127 @@ span{
     text-align: center;
     font-size: 16px;
     color: var(--text-color);
+}
+
+/* Rain animation for services boxes */
+.services-box {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Purple gradient for all boxes on hover */
+.services-box:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+    border-color: #667eea;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.6),
+                0 0 80px rgba(118, 75, 162, 0.4);
+}
+
+/* Change header color when ANY service box is hovered */
+.services-box:hover ~ body .header,
+.services-container:has(.services-box:hover) ~ .header,
+body:has(.services-box:hover) .header {
+    background: #667eea !important;
+}
+
+/* Color shifting animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Change text color on hover */
+.services-box:hover h3,
+.services-box:hover p {
+    color: #fff;
+}
+
+.services-box:hover i {
+    color: #fff;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+/* White rain effect - only visible on hover */
+.services-box::before,
+.services-box::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        transparent 20%,
+        rgba(255, 255, 255, 0.9) 40%, 
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.9) 60%,
+        transparent 80%,
+        transparent 100%);
+    opacity: 0;
+    pointer-events: none;
+    filter: blur(1px);
+}
+
+.services-box::before {
+    left: 25%;
+    animation: rain-streak-1 1.2s linear infinite;
+}
+
+.services-box::after {
+    left: 75%;
+    animation: rain-streak-2 1.2s linear infinite;
+    animation-delay: 0.6s;
+}
+
+/* Show rain on hover */
+.services-box:hover::before,
+.services-box:hover::after {
+    opacity: 1;
+}
+
+@keyframes rain-streak-1 {
+    0% {
+        top: -100%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes rain-streak-2 {
+    0% {
+        top: -100%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
 }
 
 @media (max-width: 1200px) {

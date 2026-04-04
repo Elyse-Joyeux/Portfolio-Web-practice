@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-   <form action="#">
+   <form action="#" method="post" enctype="multipart/form-data">
     <div class="login">
         <h3>Login</h3>
         <label for="usname" id="l1">Username: </label>
-        <input type="text" id="usname">
+        <input type="text" id="usname" pattern="[a-zA-Z]{8,30}" >
         <br>
         <label for="password" id="l2">Password: </label>
         <input type="password" id="password">
@@ -19,7 +19,8 @@
         <a href="forgot.htm" class="fgt">Forgot Password?</a>
         <br>
         <br>
-        <a href="portfolio.htm" id="an">Login</a>
+        <a href="index.htm" id="an">Login</a>
+        <input type="reset">
         <p>No account?</p>
         <a href="cra.htm" class="register">Create account</a>
     </div>

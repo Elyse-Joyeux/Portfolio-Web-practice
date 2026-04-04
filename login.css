@@ -44,11 +44,13 @@ body{
     border-radius: 6px;
     background: rgba(255,255,255,0.7);
     font-size: 1.4rem;
+    transition: background 2s ease;
 }
 
 .login input:focus {
     border-color: #007f73;
     box-shadow: 0 0 6px rgba(0,127,115,0.4);
+    background-color: rgb(188, 242, 224);
 }
 
 input[type="submit"] {

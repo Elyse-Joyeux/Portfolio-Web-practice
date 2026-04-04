@@ -18,3 +18,18 @@ const typed = new Typed('.multiple-context', {
     backDelay: 1400,
     loop: true,
 });
+
+
+// Change header color when hovering over service boxes
+const serviceBoxes = document.querySelectorAll('.services-box');
+const header = document.querySelector('.header');
+
+serviceBoxes.forEach(box => {
+    box.addEventListener('mouseenter', () => {
+        header.style.backgroundColor = '#667eea';
+    });
+    
+    box.addEventListener('mouseleave', () => {
+        header.style.backgroundColor = '#007f73';
+    });
+});
