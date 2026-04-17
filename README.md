@@ -85,7 +85,7 @@ PASSWORD=your_gmail_app_password
 ### 4. Run the server
 
 ```bash
-npm start
+npm run dev
 ```
 
 The server runs on **http://localhost:5000**
