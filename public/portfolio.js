@@ -32,7 +32,7 @@ serviceBoxes.forEach(box => {
     });
 });
 
-// ── Contact Form Handler ──────────────────────────────────────────
+// Contact Form Handler 
 const contactForm = document.querySelector('.contact form');
 const submitBtn   = document.querySelector('.contact .btn[type="submit"]');
 
