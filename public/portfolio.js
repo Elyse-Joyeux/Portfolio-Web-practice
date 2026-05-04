@@ -32,7 +32,7 @@ serviceBoxes.forEach(box => {
     });
 });
 
-// ── Contact Form Handler ──────────────────────────────────────────
+// Contact Form Handler 
 const contactForm = document.querySelector('.contact form');
 const submitBtn   = document.querySelector('.contact .btn[type="submit"]');
 
@@ -54,7 +54,7 @@ contactForm.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
 
     try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch('https://personal-portfolio-f8qf.onrender.com/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, message })
